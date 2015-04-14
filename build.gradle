@@ -1,11 +1,9 @@
 buildscript {
     ext {
-        springBootVersion = '1.2.0.RC2'
+        springBootVersion = '1.2.3.RELEASE'
     }
     repositories {
         mavenCentral()
-        maven { url "https://repo.spring.io/snapshot" }
-        maven { url "https://repo.spring.io/milestone" }
 
     }
     dependencies {
@@ -20,14 +18,14 @@ allprojects {
 
   repositories {
       mavenCentral()
-      maven { url "https://repo.spring.io/snapshot" }
-      maven { url "https://repo.spring.io/milestone" }
   }
 }
 
 subprojects {
   apply plugin: 'spring-boot'
 
+
+  //ensure JAVA_HOME is using 1.8 version
   sourceCompatibility = 1.8
   targetCompatibility = 1.8
 
@@ -65,5 +63,5 @@ project(':microservices-pact-provider') {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.12'
+    gradleVersion = '2.3'
 }
